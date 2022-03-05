@@ -10,7 +10,7 @@ socket_io.on('connection', (socket) => {  console.log('a user connected');});
     client.on('qr', (qr) => {
     // Generate and scan this code with your phone
     console.log('QR RECEIVED');
-    //qrcode.generate(qr, {small: true});
+    qrcode.generate(qr, {small: true});
    });
 
     client.on('ready', () => {
