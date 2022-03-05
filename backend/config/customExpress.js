@@ -1,19 +1,13 @@
 const express = require('express');
-const consign = require('consign');
-const bodyParser = require('body-parser');
 const http = require('http');
+const { Server}  = require('socket.io')
 
-module.exports = () =>{
 const app = express();
-app.use(bodyParser.urlencoded({extended: true}));
-consign() // colocando controllers dentro do app
-    .include('models')
-    .include('controllers')
-    .into(app);
-    const server = http.createServer(app);
-consign()
-    .include('socket')
-    .into(server);
-    return server;
-}
+const serverHttp = http.createServer(app);
+const io = new Server(serverHttp);
+module.exports = {
+    servidor:serverHttp, 
+    socket_io:io,
+    express: app
+};
 
