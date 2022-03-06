@@ -11,8 +11,10 @@ socket_io.on('connection', (socket) => {  console.log('a user connected');});
     // Generate and scan this code with your phone
     console.log('QR RECEIVED');
     qrcode.generate(qr, {small: true});
+    socket_io.emit('qrcode', qr);
    });
 
+   
     client.on('ready', () => {
         console.log('Client is ready!');
     });
