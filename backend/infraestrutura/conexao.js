@@ -1,11 +1,11 @@
 const pg = require('pg');
 
 const config ={
-    host: '192.168.87.254',
-    user:  'eserv_leitura',
-    password: 'a01065c76fb3c612e2520b19aacf93e6',
-    database: 'hubsoft',
-    port:     '9432'
+    host: '',
+    user:  '',
+    password: '',
+    database: '',
+    port:     ''
 }
 const conexao = new pg.Client(config);
 
